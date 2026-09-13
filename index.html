@@ -189,8 +189,10 @@
   .final-cta h2{ font-size:clamp(28px, 4.2vw, 42px); font-weight:700; margin-bottom:16px; }
   .final-cta p{ color:var(--text-muted); font-size:16px; margin-bottom:36px; }
 
-  .form-box{ background:var(--bg-elevated); border:1px solid var(--line); border-radius:18px; overflow:hidden; padding:6px; width:100%; margin-top:20px; }
-  .form-box iframe{ width:100% !important; border:0; display:block; }
+  .calendly-widget{ background:var(--bg-elevated); border:1px solid var(--line); border-radius:18px; overflow:hidden; padding:0; width:100%; margin-top:20px; }
+  .calendly-widget .calendly-inline-widget{ width:100% !important; }
+  /* Calendly custom styling for dark theme */
+  .calendly-inline-widget { --color-primary: #5491D8; --color-text-primary: #F5F6F8; --color-bg-primary: #0E1322; }
   .form-note{ margin-top:14px; font-size:12.5px; color:var(--text-dim); }
 
   footer{ padding:48px 0 100px; text-align:center; color:var(--text-dim); font-size:13px; border-top:1px solid var(--line); }
@@ -324,10 +326,8 @@
       <h2><span class="i18n" data-en="One call." data-ar="مكالمة واحدة.">One call.</span> <span class="grad i18n" data-en="A clear next step." data-ar="خطوة واضحة جاية.">A clear next step.</span></h2>
       <p class="i18n" data-en="No pitch, no pressure — just a real look at where your growth is stuck." data-ar="من غير بيع ولا ضغط — بس نظرة حقيقية على اللي واقف قدام نموك.">No pitch, no pressure — just a real look at where your growth is stuck.</p>
     </div>
-    <div class="form-box">
-      <iframe data-tally-src="https://tally.so/embed/VLeKal?alignLeft=1&hideTitle=1&transparentBackground=1"
-        loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
-        title="Ray Sense — Growth Consultation"></iframe>
+    <div id="booking" class="calendly-widget">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/raysense-agency/free-growth-diagnosis-call" style="min-width:320px;height:900px;"></div>
     </div>
   </div>
 </section>
@@ -341,14 +341,9 @@
 
 <div class="sticky-cta"><a href="#book" class="i18n" data-en="Book Your Free Growth Call" data-ar="احجز استشارتك المجانية">Book Your Free Growth Call</a></div>
 
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <script>
-var d=document,w="https://tally.so/widgets/embed.js",v=function(){
-  "undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))
-};
-if("undefined"!=typeof Tally)v();
-else if(d.querySelector('script[src="'+w+'"]')==null){
-  var s=d.createElement("script"); s.src=w; s.onload=v; s.onerror=v; d.body.appendChild(s);
-} else v();
 
 var revealEls = document.querySelectorAll('.reveal');
 var observer = new IntersectionObserver(function(entries){
