@@ -189,8 +189,18 @@
   .final-cta h2{ font-size:clamp(28px, 4.2vw, 42px); font-weight:700; margin-bottom:16px; }
   .final-cta p{ color:var(--text-muted); font-size:16px; margin-bottom:36px; }
 
-  .form-box{ background:var(--bg-elevated); border:1px solid var(--line); border-radius:18px; overflow:hidden; padding:6px; width:100%; margin-top:20px; }
-  .form-box iframe{ width:100% !important; border:0; display:block; }
+  .form-box{
+    background:linear-gradient(135deg, rgba(84,145,216,0.06), rgba(108,108,224,0.03));
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    padding:0;
+    width:100%;
+    margin-top:24px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(84,145,216,0.08);
+    backdrop-filter:blur(20px);
+  }
+  .form-box iframe{ width:100% !important; border:0; display:block; background:transparent; }
   .form-note{ margin-top:14px; font-size:12.5px; color:var(--text-dim); }
 
   footer{ padding:48px 0 100px; text-align:center; color:var(--text-dim); font-size:13px; border-top:1px solid var(--line); }
@@ -239,11 +249,11 @@
   <div class="hero-corner bl"></div>
   <div class="hero-corner br"></div>
 
-  <div class="eyebrow i18n" data-en="Strategic Growth Partner" data-ar="شريك النمو الإستراتيجي">Strategic Growth Partner</div>
+  <div class="eyebrow i18n" data-en="Growth Audit for Small Businesses" data-ar="تدقيق النمو للمشاريع الصغيرة">Growth Audit for Small Businesses</div>
   <div class="hero-word">RAY SENSE</div>
   <h1><span class="i18n" data-en="Know what's blocking your growth." data-ar="اعرف إيه اللي واقف قدام نموك.">Know what's blocking your growth.</span><br><span class="grad i18n" data-en="Then fix it — with a system." data-ar="وبعدين احله — بنظام.">Then fix it — with a system.</span></h1>
-  <p class="lead i18n" data-en="A clear diagnosis of your business, a tailored strategy, and execution that actually moves the numbers." data-ar="تشخيص واضح لمشروعك، استراتيجية مصممة خصيصًا له، وتنفيذ فعال يحرك الأرقام حقًا.">A clear diagnosis of your business, a strategy built around it, and execution that actually moves the numbers.</p>
-  <a href="#book" class="cta-btn i18n" data-en="Book Your Free Growth Call" data-ar="احجز استشارتك المجانية">Book Your Free Growth Call</a>
+  <p class="lead i18n" data-en="We help small businesses find what is blocking their growth and build a practical system to increase leads, conversions, and revenue." data-ar="نساعد المشاريع الصغيرة على اكتشاف ما يعيق نموها، وبناء نظام عملي يزيد العملاء المحتملين والتحويلات والأرباح.">We help small businesses find what is blocking their growth and build a practical system to increase leads, conversions, and revenue.</p>
+  <a href="#book" class="cta-btn i18n" data-en="Get Your Free Growth Diagnosis" data-ar="احصل على تشخيص النمو المجاني">Get Your Free Growth Diagnosis</a>
   <div class="cta-sub i18n" data-en="Free 30-minute call. No sales pitch — just absolute clarity on where you stand." data-ar="مكالمة مجانية 30 دقيقة. بلا بيع — فقط وضوح مطلق عن وضعك الحالي.">Free 30-minute call. No pitch — just clarity on where you stand.</div>
 </section>
 
@@ -325,8 +335,8 @@
       <p class="i18n" data-en="No pitch, no pressure — just a real look at where your growth is stuck." data-ar="من غير بيع ولا ضغط — بس نظرة حقيقية على اللي واقف قدام نموك.">No pitch, no pressure — just a real look at where your growth is stuck.</p>
     </div>
     <div class="form-box">
-      <iframe data-tally-src="https://tally.so/embed/VLeKal?alignLeft=1&hideTitle=1&transparentBackground=1"
-        loading="lazy" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0"
+      <iframe data-tally-src="https://tally.so/embed/VLeKal?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy" width="100%" height="216" frameborder="0" marginheight="0" marginwidth="0"
         title="Ray Sense — Business Discovery"></iframe>
     </div>
   </div>
@@ -339,7 +349,7 @@
   <div class="f-contact i18n" data-en="Cairo, Egypt · hello@raysense.com · www.raysense.com" data-ar="القاهرة، مصر · hello@raysense.com · www.raysense.com">Cairo, Egypt · hello@raysense.com · www.raysense.com</div>
 </footer>
 
-<div class="sticky-cta"><a href="#book" class="i18n" data-en="Book Your Free Growth Call" data-ar="احجز استشارتك المجانية">Book Your Free Growth Call</a></div>
+<div class="sticky-cta"><a href="#book" class="i18n" data-en="Get Your Free Growth Diagnosis" data-ar="احصل على تشخيص النمو المجاني">Get Your Free Growth Diagnosis</a></div>
 
 <script>
 var d=document,w="https://tally.so/widgets/embed.js",v=function(){
