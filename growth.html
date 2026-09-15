@@ -290,7 +290,7 @@
     <div class="brand-name">Ray Sense</div>
     <div class="checkmark">✅</div>
     <h1>شكراً!</h1>
-    <p class="subtitle">تم استقبال طلب الاستشارة المجانية بنجاح</p>
+    <p class="subtitle" id="greeting">تم استقبال طلب الاستشارة المجانية بنجاح</p>
   </div>
 </div>
 
@@ -298,28 +298,36 @@
   
   <div class="divider"></div>
   
-  <div class="booking-details">
-    <div class="detail-row">
+  <div class="booking-details" id="booking-details">
+    <div class="detail-row" id="row-date">
       <div class="detail-icon">📅</div>
       <div class="detail-text">
         <div class="detail-label">التاريخ</div>
-        <div class="detail-value" id="booking-date">—</div>
+        <div class="detail-value" id="booking-date"></div>
       </div>
     </div>
     
-    <div class="detail-row">
+    <div class="detail-row" id="row-time">
       <div class="detail-icon">⏰</div>
       <div class="detail-text">
         <div class="detail-label">الساعة</div>
-        <div class="detail-value" id="booking-time">—</div>
+        <div class="detail-value" id="booking-time"></div>
       </div>
     </div>
     
-    <div class="detail-row">
+    <div class="detail-row" id="row-phone">
       <div class="detail-icon">📱</div>
       <div class="detail-text">
         <div class="detail-label">سنتواصل معك على</div>
-        <div class="detail-value" id="booking-phone">—</div>
+        <div class="detail-value" id="booking-phone"></div>
+      </div>
+    </div>
+
+    <div class="detail-row" id="row-fallback" style="display:none;">
+      <div class="detail-icon">📧</div>
+      <div class="detail-text">
+        <div class="detail-label">تفاصيل الموعد</div>
+        <div class="detail-value">هتوصلك كل التفاصيل على بريدك الإلكتروني خلال دقائق</div>
       </div>
     </div>
   </div>
@@ -362,10 +370,47 @@
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-document.getElementById('booking-date').textContent = params.get('date') || '—';
-document.getElementById('booking-time').textContent = params.get('time') || '—';
-document.getElementById('booking-phone').textContent = params.get('phone') || '—';
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  function clean(value) {
+    if (!value) return '';
+    var text = value.trim();
+    if (!text || text === '-' || text === '—') return '';
+    return text;
+  }
+
+  // ترحيب باسم العميل لو الاسم اتبعت في الرابط
+  var name = clean(params.get('name'));
+  if (name) {
+    document.getElementById('greeting').textContent =
+      'أهلاً ' + name + '، تم استقبال طلب الاستشارة المجانية بنجاح';
+  }
+
+  // عرض كل تفصيلة لو موجودة، وإخفاء الصف لو فاضي
+  var rows = [
+    { key: 'date',  valueId: 'booking-date',  rowId: 'row-date'  },
+    { key: 'time',  valueId: 'booking-time',  rowId: 'row-time'  },
+    { key: 'phone', valueId: 'booking-phone', rowId: 'row-phone' }
+  ];
+
+  var shown = 0;
+
+  rows.forEach(function (row) {
+    var value = clean(params.get(row.key));
+    if (value) {
+      document.getElementById(row.valueId).textContent = value;
+      shown++;
+    } else {
+      document.getElementById(row.rowId).style.display = 'none';
+    }
+  });
+
+  // لو مفيش أي بيانات، نعرض رسالة بديلة بدل الخانات الفاضية
+  if (shown === 0) {
+    document.getElementById('row-fallback').style.display = 'flex';
+  }
+})();
 </script>
 
 </body>
