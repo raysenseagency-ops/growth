@@ -226,6 +226,25 @@
     backdrop-filter:blur(20px);
   }
   .form-box iframe{ width:100% !important; border:0; display:block; background:transparent; }
+  .results-strip{ padding:56px 0 0; }
+  .results-title{ font-family:'Space Grotesk', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-blue-bright); margin-bottom:18px; text-align:center; }
+  body.ar .results-title{ font-family:'Cairo', sans-serif; text-transform:none; letter-spacing:0; }
+  .results-strip{ border-top:1px solid var(--line); padding-top:26px; margin-top:46px; }
+  .results-title{ font-family:'Space Grotesk', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--accent-blue-bright); margin-bottom:17px; font-weight:700; }
+  body.ar .results-title{ font-family:'Cairo', sans-serif; text-transform:none; letter-spacing:0; }
+  .results-window{ overflow:hidden; position:relative; margin-inline:-8px; padding:8px; }
+  .results-window::before,.results-window::after{ content:''; position:absolute; top:0; bottom:0; width:70px; z-index:2; pointer-events:none; }
+  .results-window::before{ left:0; background:linear-gradient(90deg, var(--bg-primary), transparent); }
+  .results-window::after{ right:0; background:linear-gradient(270deg, var(--bg-primary), transparent); }
+  .results-track{ display:flex; gap:12px; width:max-content; animation:results-marquee 18s linear infinite; }
+  .results-track:hover{ animation-play-state:paused; }
+  .result-card{ background:var(--bg-elevated); border:1px solid var(--line); border-radius:13px; padding:16px; display:flex; flex-direction:column; gap:3px; width:190px; flex:0 0 190px; }
+  .result-card small{ font-size:10px; color:var(--text-dim); }
+  .result-card b{ font-family:'Space Grotesk', sans-serif; font-size:20px; letter-spacing:-.04em; }
+  .result-card em{ font-style:normal; color:var(--accent-blue-bright); font-size:11px; }
+  @keyframes results-marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (max-width:780px){ .results-track{ animation-duration:14s; } .results-window::before,.results-window::after{ width:35px; } .result-card{ width:168px; flex-basis:168px; } }
+  @media (prefers-reduced-motion:reduce){ .results-track{ animation:none; } }
   .form-head{ margin-top:36px; display:flex; flex-direction:column; gap:4px; text-align:center; }
   .form-head b{ font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:700; }
   body.ar .form-head b{ font-family:'Cairo', sans-serif; }
@@ -258,6 +277,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#think" class="i18n" data-en="How We Think" data-ar="كيف نفكر">How We Think</a>
       <a href="#work" class="i18n" data-en="How We Work" data-ar="كيف نعمل">How We Work</a>
+      <a href="#build" class="i18n" data-en="What We Build" data-ar="إحنا بنبني إيه">What We Build</a>
       <a href="#why" class="i18n" data-en="Why Ray Sense" data-ar="ليه راي سينس">Why Ray Sense</a>
     </div>
     <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu" onclick="toggleMenu()">
@@ -281,21 +301,21 @@
   <div class="hero-corner bl"></div>
   <div class="hero-corner br"></div>
 
-  <div class="eyebrow i18n" data-en="Growth Audit for Small Businesses" data-ar="تدقيق النمو للمشاريع الصغيرة">Growth Audit for Small Businesses</div>
+  <div class="eyebrow i18n" data-en="Growth Diagnosis for Businesses Ready to Grow" data-ar="تشخيص النمو للمشاريع الجادة">Growth Diagnosis for Businesses Ready to Grow</div>
   <div class="hero-word">RAY SENSE</div>
   <h1><span class="i18n" data-en="Know what's blocking your growth." data-ar="اعرف إيه اللي واقف قدام نموك.">Know what's blocking your growth.</span><br><span class="grad i18n" data-en="Then fix it — with a system." data-ar="وبعدين احله — بنظام.">Then fix it — with a system.</span></h1>
-  <p class="lead i18n" data-en="We help small businesses find what is blocking their growth and build a practical system to increase leads, conversions, and revenue." data-ar="نساعد المشاريع الصغيرة على اكتشاف ما يعيق نموها، وبناء نظام عملي يزيد العملاء المحتملين والتحويلات والأرباح.">We help small businesses find what is blocking their growth and build a practical system to increase leads, conversions, and revenue.</p>
+  <p class="lead i18n" data-en="We help businesses identify the constraint behind stalled growth, then build a practical system across offer, acquisition, conversion, and retention." data-ar="نساعد المشاريع الصغيرة على اكتشاف ما يعيق نموها، وبناء نظام عملي يزيد العملاء المحتملين والتحويلات والأرباح.">We help businesses identify what is blocking growth — then build a practical system across offer, acquisition, conversion, and retention.</p>
   <a href="#book" class="cta-btn i18n" data-en="Get Your Free Growth Diagnosis" data-ar="احصل على تشخيص النمو المجاني">Get Your Free Growth Diagnosis</a>
-  <div class="cta-sub i18n" data-en="Free 30-minute call. No sales pitch — just absolute clarity on where you stand." data-ar="مكالمة مجانية 30 دقيقة. بلا بيع — فقط وضوح مطلق عن وضعك الحالي.">Free 30-minute call. No pitch — just clarity on where you stand.</div>
+  <div class="cta-sub i18n" data-en="Free 30-minute call — just clarity on where you stand." data-ar="مكالمة مجانية 30 دقيقة — وضوح فوري عن وضعك.">Free 30-minute call — just clarity on where you stand.</div>
 </section>
 
 <!-- ============ UNDERSTAND THE PROBLEM (merged) ============ -->
 <section class="reveal" id="think">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow i18n" data-en="Before Any Campaign" data-ar="قبل أي حملة">Before Any Campaign</div>
-      <h2 class="i18n" data-en="Your growth problem probably isn't marketing." data-ar="مشكلة نموك غالبًا مش تسويق.">Your growth problem probably isn't marketing.</h2>
-      <p class="i18n" data-en="Most businesses lose money guessing. We study your business, customers, market, and numbers first — ensuring every move is driven by facts, not luck." data-ar="معظم المشاريع والشركات تخسر أموالاً من التخمين. ندرس مشروعك وعملاءك والسوق والأرقام أولاً — لضمان أن كل خطوة مدفوعة بالحقائق وليس الحظ.">Most businesses lose money guessing. We study your business, customers, market, and numbers first — so every move after that is based on facts, not luck.</p>
+      <div class="eyebrow i18n" data-en="Before Anything Else" data-ar="قبل أي شيء">Before Anything Else</div>
+      <h2 class="i18n" data-en="Your growth problem probably isn't marketing." data-ar="مشكلة نموك على الأغلب مش في التسويق.">Your growth problem probably isn't marketing.</h2>
+      <p class="i18n" data-en="Most businesses waste budget fixing the wrong thing. We diagnose your business first — customers, market, numbers — so every move is grounded in facts, not guesses." data-ar="معظم المشاريع بتصرف ميزانية على حل المشكلة الغلط. إحنا بنشخّص مشروعك أولاً — عملاء، سوق، أرقام — عشان كل خطوة تبقى مبنية على حقائق مش تخمين.">Most businesses lose money guessing. We study your business, customers, market, and numbers first — so every move after that is based on facts, not luck.</p>
     </div>
     <div class="tag-row">
       <span class="i18n" data-en="Market Research" data-ar="بحث السوق">Market Research</span>
@@ -308,44 +328,84 @@
 
 <!-- ============ STRATEGY + GROWTH SYSTEM ============ -->
 <section class="reveal" id="work">
-  <div class="blob" style="width:500px; height:500px; bottom:-200px; right:-180px; background:radial-gradient(circle, rgba(108,108,224,0.12), transparent 70%); animation:blob-float 18s ease-in-out infinite reverse;"></div>
   <div class="wrap">
     <div class="section-head">
-      <h2 class="i18n" data-en="Four Questions Shape Your Entire Plan." data-ar="أربعة أسئلة تحدد خطتك كاملة.">Four questions decide your whole plan.</h2>
-      <p class="i18n" data-en="We answer these before touching a channel or a budget, ensuring the strategy fits your business rather than a generic template:" data-ar="نجيب على هذه الأسئلة قبل لمس أي قناة أو ميزانية، لضمان أن الإستراتيجية تناسب مشروعك وليس قالب عام:">We answer these before touching a channel or a budget — so the plan fits your business, not a template.</p>
+      <div class="eyebrow i18n" data-en="How We Work" data-ar="كيف نعمل">How We Work</div>
+      <h2 class="i18n" data-en="A clear path from diagnosis to growth." data-ar="طريق واضح من التشخيص للنمو.">A clear path from diagnosis to growth.</h2>
+      <p class="i18n" data-en="Every stage has a job. Every decision has a reason." data-ar="كل مرحلة لها دور. وكل قرار له سبب.">Every stage has a job. Every decision has a reason.</p>
     </div>
-    <div class="q-grid">
-      <div class="q-card"><div class="q i18n" data-en="Where are we now?" data-ar="إحنا فين دلوقتي؟">Where are we now?</div><div class="a i18n" data-en="(Financial & Market Diagnosis)" data-ar="(تشخيص مالي وسوقي)">Diagnosis</div></div>
-      <div class="q-card"><div class="q i18n" data-en="Where do we want to be?" data-ar="عايزين نوصل لفين؟">Where do we want to be?</div><div class="a i18n" data-en="(Precise Goals)" data-ar="(أهداف دقيقة)">Goals</div></div>
-      <div class="q-card"><div class="q i18n" data-en="What's blocking growth?" data-ar="إيه اللي واقف قدام النمو؟">What's blocking growth?</div><div class="a i18n" data-en="(Gaps & Bottlenecks)" data-ar="(الفجوات والاختناقات)">Gaps</div></div>
-      <div class="q-card"><div class="q i18n" data-en="What's the smartest path?" data-ar="إيه أذكى طريق؟">What's the smartest path?</div><div class="a i18n" data-en="(The Action Plan)" data-ar="(خطة العمل)">The Plan</div></div>
-    </div>
-    <div class="growth-flow">
-      <span class="node i18n" data-en="Understand" data-ar="نفهم">Understand</span><span class="arrow">→</span>
-      <span class="node i18n" data-en="Diagnose" data-ar="نشخّص">Diagnose</span><span class="arrow">→</span>
-      <span class="node i18n" data-en="Strategize" data-ar="نخطط">Strategize</span><span class="arrow">→</span>
-      <span class="node i18n" data-en="Execute" data-ar="ننفّذ">Execute</span><span class="arrow">→</span>
-      <span class="node i18n" data-en="Measure" data-ar="نقيس">Measure</span><span class="arrow">→</span>
-      <span class="node last i18n" data-en="Scale" data-ar="ننمو">Scale</span>
+    <div class="process-list">
+      <div class="process-row">
+        <div class="process-num">01</div>
+        <div>
+          <h3 class="i18n" data-en="Understand" data-ar="نفهم">Understand</h3>
+          <p class="i18n" data-en="We study the business, customers, market, and numbers before recommending anything." data-ar="ندرس المشروع وعملاءه وسوقه وأرقامه قبل اقتراح أي حل.">We study the business, customers, market, and numbers before recommending anything.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">02</div>
+        <div>
+          <h3 class="i18n" data-en="Diagnose" data-ar="نشخّص">Diagnose</h3>
+          <p class="i18n" data-en="We identify the real constraint, the gap, and the opportunity that matters most." data-ar="نحدد العائق الحقيقي والفجوة والفرصة الأهم.">We identify the real constraint, the gap, and the opportunity that matters most.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">03</div>
+        <div>
+          <h3 class="i18n" data-en="Build" data-ar="نبني">Build</h3>
+          <h3 class="i18n" data-en="Build" data-ar="نبني">Build</h3>
+          <p class="i18n" data-en="We design the strategy, offers, messaging, and system the business actually needs." data-ar="نصمم الاستراتيجية والعروض والرسائل ونظام النمو الذي يحتاجه المشروع.">We design the strategy, offers, messaging, and system the business actually needs.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">04</div>
+        <div>
+          <h3 class="i18n" data-en="Execute &amp; Improve" data-ar="ننفّذ ونحسّن">Execute &amp; Improve</h3>
+          <p class="i18n" data-en="We launch, measure, test, and improve from real performance data." data-ar="نطلق ونقيس ونختبر ونحسّن بناءً على الأداء الحقيقي.">We launch, measure, test, and improve from real performance data.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ WHY RAY SENSE ============ -->
+
+<!-- ============ WHAT WE BUILD ============ -->
+<section class="reveal" id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow i18n" data-en="What We Build" data-ar="إحنا بنبني إيه">What We Build</div>
+      <h2 class="i18n" data-en="Connected growth systems." data-ar="نظام نمو متصل.">Connected growth systems.</h2>
+      <p class="i18n" data-en="We don't sell disconnected marketing services. We connect the parts that move the business." data-ar="مش بنبيع خدمات تسويق منفصلة. بنوصّل الأجزاء اللي بتحرك المشروع.">We don't sell disconnected marketing services. We connect the parts that move the business.</p>
+    </div>
+    <div class="plain-list">
+      <span class="i18n" data-en="Strategy" data-ar="استراتيجية">Strategy</span>
+      <span class="i18n" data-en="Offers" data-ar="عروض">Offers</span>
+      <span class="i18n" data-en="Content" data-ar="محتوى">Content</span>
+      <span class="i18n" data-en="Acquisition" data-ar="اكتساب">Acquisition</span>
+      <span class="i18n" data-en="Conversion" data-ar="تحويل">Conversion</span>
+      <span class="i18n" data-en="Retention" data-ar="احتفاظ">Retention</span>
+    </div>
+    <div class="closing-line" style="margin-top:28px;">
+      <span class="i18n" data-en="Every part working together — not in isolation." data-ar="كل جزء يشتغل مع التاني — مش بشكل منفصل.">Every part working together — not in isolation.</span>
+    </div>
+  </div>
+</section>
+
 <section class="reveal why" id="why">
   <div class="wrap">
     <div class="why-grid">
       <div>
         <div class="section-head" style="margin-bottom:28px;">
           <div class="eyebrow i18n" data-en="Why Ray Sense" data-ar="ليه راي سينس">Why Ray Sense</div>
-          <h2 class="i18n" data-en="We read the numbers before we touch the marketing." data-ar="نقرأ الأرقام قبل ما نلمس التسويق.">We read the numbers before we touch the marketing.</h2>
-          <p class="i18n" data-en="Every business leaks money somewhere between the ad and the sale. Our job is to find exactly where — then close it with a system that keeps working after we leave." data-ar="كل مشروع بيسرّب فلوس في مكان ما بين الإعلان والبيع. شغلنا إننا نلاقي المكان ده بالظبط — وبعدين نقفله بنظام يفضل شغال حتى بعد ما نمشي.">Every business leaks money somewhere between the ad and the sale. Our job is to find exactly where — then close it with a system that keeps working after we leave.</p>
+          <h2 class="i18n" data-en="Numbers first. Marketing second." data-ar="الأرقام أولاً. التسويق تانياً.">We read the numbers before we touch the marketing.</h2>
+          <p class="i18n" data-en="Growth leaks between attention and revenue. We find exactly where — quantify it — then close it with a system your team can run, measure, and repeat." data-ar="النمو بيتسرّب بين الاهتمام والإيراد. بنلاقي المكان بالظبط — نحسب أثره — وبعدين نقفله بنظام فريقك يقدر يشغّله ويقيسه ويكرره.">Every business leaks money somewhere between the ad and the sale. Our job is to find exactly where — then close it with a system that keeps working after we leave.</p>
         </div>
         <div class="why-list">
-          <div class="why-item"><span class="dot">01</span> <span class="i18n" data-en="<strong>We map the full funnel, not one channel.</strong> Traffic, landing page, offer, checkout, follow-up — we measure each stage to see where customers drop off." data-ar="<strong>بنرسم خريطة الرحلة كاملة، مش قناة واحدة.</strong> الزيارات، صفحة الهبوط، العرض، الدفع، المتابعة — بنقيس كل مرحلة عشان نشوف العميل بيقع فين."><strong>We map the full funnel, not one channel.</strong> Traffic, landing page, offer, checkout, follow-up — we measure each stage to see where customers drop off.</span></div>
-          <div class="why-item"><span class="dot">02</span> <span class="i18n" data-en="<strong>We quantify the gap before we fix it.</strong> If conversion sits at 1.2% and the category average is 2.5%, that gap has a number in EGP — and that number decides our priority." data-ar="<strong>بنحسب حجم الفجوة قبل ما نصلحها.</strong> لو التحويل 1.2% ومتوسط السوق 2.5%، الفرق ده ليه رقم بالجنيه — والرقم ده هو اللي بيحدد أولويتنا."><strong>We quantify the gap before we fix it.</strong> If conversion sits at 1.2% and the category average is 2.5%, that gap has a number in EGP — and that number decides our priority.</span></div>
-          <div class="why-item"><span class="dot">03</span> <span class="i18n" data-en="<strong>We work on unit economics, not vanity metrics.</strong> Cost per acquisition, average order value, repeat rate, and payback period — because profit is what you actually keep." data-ar="<strong>بنشتغل على اقتصاديات الوحدة، مش أرقام المظاهر.</strong> تكلفة اكتساب العميل، متوسط قيمة الطلب، معدل التكرار، ومدة استرداد التكلفة — لأن الربح هو اللي بيفضل معاك فعلاً."><strong>We work on unit economics, not vanity metrics.</strong> Cost per acquisition, average order value, repeat rate, and payback period — because profit is what you actually keep.</span></div>
-          <div class="why-item"><span class="dot">04</span> <span class="i18n" data-en="<strong>You end up with a system, not a campaign.</strong> A documented process your team can run, measure, and repeat — so growth does not depend on one clever ad." data-ar="<strong>هتخرج بنظام، مش حملة.</strong> عملية موثّقة فريقك يقدر يشغّلها ويقيسها ويكررها — عشان النمو ميبقاش معتمد على إعلان شاطر واحد."><strong>You end up with a system, not a campaign.</strong> A documented process your team can run, measure, and repeat — so growth does not depend on one clever ad.</span></div>
+          <div class="why-item"><span class="dot">01</span> <span class="i18n" data-en="<strong>Full funnel, not one channel.</strong> We measure each stage — traffic, offer, checkout, follow-up — to see exactly where customers drop off." data-ar="<strong>الرحلة كاملة، مش قناة واحدة.</strong> بنقيس كل مرحلة — زيارات، عرض، دفع، متابعة — عشان نشوف بالظبط فين بيقع العميل."><strong>We map the full funnel, not one channel.</strong> Traffic, landing page, offer, checkout, follow-up — we measure each stage to see where customers drop off.</span></div>
+          <div class="why-item"><span class="dot">02</span> <span class="i18n" data-en="<strong>We quantify the gap before fixing it.</strong> A conversion rate of 1.2% vs a category average of 2.5% has a real number in EGP — and that number sets the priority." data-ar="<strong>بنحسب حجم الفجوة قبل ما نصلحها.</strong> معدل تحويل 1.2% مقابل متوسط السوق 2.5% ليه رقم حقيقي بالجنيه — والرقم ده هو اللي بيحدد الأولوية."><strong>We quantify the gap before we fix it.</strong> If conversion sits at 1.2% and the category average is 2.5%, that gap has a number in EGP — and that number decides our priority.</span></div>
+          <div class="why-item"><span class="dot">03</span> <span class="i18n" data-en="<strong>Unit economics, not vanity metrics.</strong> CAC, AOV, repeat rate, payback period — the numbers that actually determine if a business is healthy." data-ar="<strong>اقتصاديات الوحدة، مش أرقام المظاهر.</strong> تكلفة الاكتساب، متوسط الطلب، معدل التكرار، مدة الاسترداد — الأرقام اللي بتحدد فعلاً صحة المشروع."><strong>We work on unit economics, not vanity metrics.</strong> Cost per acquisition, average order value, repeat rate, and payback period — because profit is what you actually keep.</span></div>
+          <div class="why-item"><span class="dot">04</span> <span class="i18n" data-en="<strong>A system, not a campaign.</strong> A documented process your team can run and repeat — so growth does not depend on one lucky ad." data-ar="<strong>نظام، مش حملة.</strong> عملية موثّقة فريقك يشغّلها ويكررها — عشان النمو ميبقاش معتمد على إعلان محظوظ."><strong>You end up with a system, not a campaign.</strong> A documented process your team can run, measure, and repeat — so growth does not depend on one clever ad.</span></div>
         </div>
         <div class="outcome-row">
           <span class="i18n" data-en="Lower cost per customer" data-ar="تكلفة أقل للعميل">Lower cost per customer</span>
@@ -361,16 +421,33 @@
   </div>
 </section>
 
+<!-- ============ RESULTS STRIP ============ -->
+<div class="results-strip wrap">
+  <div class="results-title i18n" data-en="Performance signals, not vanity metrics." data-ar="أرقام أداء حقيقية، مش مجرد إحصائيات.">Real performance. Clear outcomes.</div>
+  <div class="results-window">
+    <div class="results-track">
+      <div class="result-card"><small class="i18n" data-en="Total sales" data-ar="إجمالي المبيعات">Total sales</small><b>EGP 182,345</b><em>+2.5K%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Orders" data-ar="الطلبات">Orders</small><b>174</b><em>+8.6K%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Conversion rate" data-ar="معدل التحويل">Conversion rate</small><b>2.35%</b><em>+104%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Total sales" data-ar="إجمالي المبيعات">Total sales</small><b>EGP 675,786</b><em>+43%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Total sales" data-ar="إجمالي المبيعات">Total sales</small><b>EGP 182,345</b><em>+2.5K%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Orders" data-ar="الطلبات">Orders</small><b>174</b><em>+8.6K%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Conversion rate" data-ar="معدل التحويل">Conversion rate</small><b>2.35%</b><em>+104%</em></div>
+      <div class="result-card"><small class="i18n" data-en="Total sales" data-ar="إجمالي المبيعات">Total sales</small><b>EGP 675,786</b><em>+43%</em></div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ FINAL CTA + FORM ============ -->
 <section class="reveal form-section" id="book">
   <div class="wrap">
     <div class="final-cta">
-      <h2><span class="i18n" data-en="One call." data-ar="مكالمة واحدة.">One call.</span> <span class="grad i18n" data-en="A clear next step." data-ar="خطوة واضحة جاية.">A clear next step.</span></h2>
-      <p class="i18n" data-en="No pitch, no pressure — just a real look at where your growth is stuck." data-ar="من غير بيع ولا ضغط — بس نظرة حقيقية على اللي واقف قدام نموك.">No pitch, no pressure — just a real look at where your growth is stuck.</p>
+      <h2><span class="i18n" data-en="One call. A clear next step." data-ar="مكالمة واحدة. وخطوة جاية واضحة.">One call. A clear next step.</span> <span class="grad i18n" data-en="A clear next step." data-ar="خطوة واضحة جاية.">A clear next step.</span></h2>
+      <p class="i18n" data-en="Tell us where growth feels stuck. We will use the call to find the next move." data-ar="احكيلنا فين النمو واقف. وهنستخدم المكالمة عشان نحدد الخطوة الجاية.">Tell us where growth feels stuck. We will use the call to find the next move.</p>
     </div>
     <div class="form-head">
-      <b class="i18n" data-en="Book Your Free Growth Call" data-ar="احجز مكالمتك المجانية">Book Your Free Growth Call</b>
-      <span class="i18n" data-en="Takes 2 minutes. We'll confirm your slot by WhatsApp." data-ar="بتاخد دقيقتين بس. هنأكد ميعادك على الواتس.">Takes 2 minutes. We'll confirm your slot by WhatsApp.</span>
+      <b class="i18n" data-en="Book Your Free Growth Call" data-ar="احجز مكالمتك المجانية الآن">Book Your Free Growth Call</b>
+      <span class="i18n" data-en="2 minutes. We'll confirm by WhatsApp." data-ar="دقيقتين. وهنأكد ميعادك على الواتس.">Takes 2 minutes. We'll confirm your slot by WhatsApp.</span>
     </div>
     <div class="form-box">
       <iframe data-tally-src="https://tally.so/embed/VLeKal?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
